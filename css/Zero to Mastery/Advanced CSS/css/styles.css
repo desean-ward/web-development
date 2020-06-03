@@ -1,0 +1,49 @@
+/* Initialze styles */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+/* Set default font-size to 10px/1rem according to the vw */
+html {
+    font-size: 1.04vw;
+    font-family: sans-serif;
+}
+
+h1 {
+    font-size: 2.8rem;
+}
+
+h2 {
+    font-size: 2.4rem;
+}
+
+h3 {
+    font-size: 1.872rem;
+}
+
+p {
+    font-size: 1.6rem;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+img {
+    width: 450px;
+    height: 450px;
+    margin: 10px;
+    /* Time to trasition all animation */
+    transition: all .5s ease-in-out;
+}
+/* Scale the img on mouse hover */
+img:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+

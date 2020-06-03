@@ -1,0 +1,298 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+/* Perform a basic reset of the css */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    top: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* Sets to default font size to 10px. Easy convert px to rem */
+    font-size: 62.5%;
+}
+
+/* Set the font characteristics on the body element using inheritence */
+/* The fonts linked from this from a Google API */
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    /* Puts a padding around the entire web page */
+    /*    padding: 30px;*/
+    box-sizing: border-box;
+
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+}
+
+/* Header Class */
+.header {
+    position: relative;
+
+    /* Defines the width of the header 95% of the viewpoint */
+
+    height: 95vh;
+    top: 0;
+    /*    width: 100vw;*/
+    padding: 2rem 2rem;
+
+    /* Go two folders up to get to the img directory using '..' */
+    /* To specify a gradient with an image, and the opacity, use 'Quick Edit' */
+    background-image: linear-gradient(
+            to left top,
+            rgba(169, 169, 169, 0.7),
+            rgba(000, 000, 000, 1)
+        ),
+        url(../img/hero.jpg);
+
+    /* Cover the width of the viewport with the img, using 'cover' */
+    background-size: cover;
+
+    /* Keeps the image centered, cropping the top and bottopm */
+    background-position: center;
+
+    /* Set the position to 'relative' to relate to the absolute */
+    /* positioning the the logo box and logo */
+    position: relative;
+
+    /* To clip/shape the image use the four coordinates */
+    /* Left top, right top, right bottom, left bottom */
+    clip-path: polygon(0 0, 100% 0, 100% 60vh, 0 100%);
+
+    box-sizing: border-box;
+}
+
+/* Logo Box Class */
+.logo-box {
+    /* Set the position of the logo box and logo to absolute according to its parent 'header'; which has been set to relative */
+    position: relative;
+    box-sizing: border-box;
+    display: block;
+    padding-bottom: 1rem;
+}
+
+.logo {
+    height: 2.1875rem;
+}
+
+.text-box {
+    display: block;
+    border-style: hidden;
+    box-sizing: border-box;
+    position: relative;
+    left: 50%;
+    top: 25%;
+
+    /* To center an element/div, use 'transform' */
+    /* This shifts the element itself 50% from both the left and top to center */
+    transform: translate(-50%, -50%);
+}
+
+/* Heading Text CSS */
+/* Block elements take up the entire with and also create line breaks */
+.heading-primary {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+
+    /* Somewhat removes the 'bounce' of the animation' */
+    backface-visibility: hidden;
+}
+
+.heading-primary-main {
+    display: block;
+    font-size: 5rem;
+    font-weight: 400;
+    letter-spacing: 2.1875rem;
+
+    /*    position: relative;*/
+    /*    margin-top: 4rem;*/
+
+    /* Animation of headings */
+    /*animation-name: moveInLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;*/
+
+    /* animation-delay delays the start of the animation
+    animation-delay: 3s;
+    */
+
+    /* animation-interation-count is the number of times the animation happens
+    animation-interation-count: 3;
+    */
+
+    /* Short hand of animation */
+    animation: moveInLeft 2s ease-out;
+}
+
+.heading-primary-sub {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 4rem;
+    letter-spacing: 1.0875rem;
+
+    /* Short hand of animation */
+    animation: moveInRight 2s ease-out;
+
+    margin-bottom: 10.75rem;
+}
+
+/* For animations/keyframes, us the '@keyframes' */
+/* To move in from the left */
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        /* To move in from the left, use 'transform: translateX() */
+        transform: translateX(-10rem);
+    }
+
+    80% {
+        transform: translate(0.3125rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* To move in from the rignt */
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        /* To move in from the right, use 'transform: translateX() */
+        transform: translateX(6.25rem);
+    }
+
+    80% {
+        transform: translate(-0.3125rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* To move in from the bottom */
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        /* To move in from the bottom, use 'transform: translateY() */
+        transform: translateY(1.875rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* ---- Button Div ---- */
+#discover-tour {
+    display: inline-block;
+    /*    margin: 0 auto;*/
+    position: relative;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+/* Use pseudo classes to style buttons under special conditions */
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    font-display: grid;
+    padding: 15px 40px;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 6.25rem;
+    position: relative;
+    font-size: 1.5rem;
+
+    /* Smoothes out all transitions */
+    transition: all 0.2s;
+}
+
+.btn-white {
+    background-color: white;
+    color: #000;
+    font-weight: 600;
+}
+
+.btn:active {
+    transform: translateY(-0.0625rem);
+    box-shadow: 0 5px 10px rgba(0, 0.2);
+}
+
+.btn:hover {
+    transform: translateY(-0.1875rem);
+    box-shadow: 0 10px 20px rgba(0, 0.2);
+}
+
+.btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+}
+
+/* ---- @media Queries ---- */
+@media only screen and (min-width: 1025px) {
+    .header,
+    .container {
+        width: 60vw;
+        margin: 0 auto;
+    }
+
+    html {
+        font-size: 0.5vw;
+    }
+}
+
+@media only screen and (max-width: 474px) {
+    .header,
+    .container {
+        width: 100vw;
+        margin: 0 auto;
+    }
+}

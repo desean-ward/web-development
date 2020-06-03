@@ -1,0 +1,120 @@
+/* Perform a basic reset */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    /* Sets the browser's font size to 10px or 0.0625rem
+        Makes setting the rem easier to calculate. 1rem = 10px */
+    font-size: 62.5%;
+    /* Sets the scroll behavior when clicking anchors within the page */
+    scroll-behavior: smooth;
+}
+
+/* Creates a 'dark' mode */
+.dark-mode {
+    background-color: black;
+    filter: invert(1) hue-rotate(100deg);
+}
+
+button {
+    color: white;
+    background-color: green;
+    outline: none;
+    padding: .5rem;
+    position: relative;
+    margin: 0 1.5vh 1.5vh 0;
+    border-radius: .5rem;
+    font-size: 1.6rem;
+    box-shadow: .25rem .25rem .5rem rgba(0, 0, 0, .5);
+    cursor: pointer;
+    border: 0px;
+    display: inline-block;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+}
+
+#test {
+
+    width: 80vw;
+    margin: 0 auto;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+     */
+    /* To center an element/div in the middle of the screen, use 'transform: translate' */
+    /* transform: translate(-50%, -50%); */
+    /* Fades after a 5 second delay */
+    /* animation: fadeOut 2s ease forwards 5s; */
+}
+
+p {
+    font-size: 1.6rem;
+    display: block;
+    margin-bottom: 1.5vh;
+}
+
+/* Increase the size of the first letter in a paragraph */
+p::first-letter {
+    font-size: xx-large;
+}
+
+/* Change the color of highlighted text */
+p::selection {
+    background-color: orangered;
+    color: turquoise;
+}
+
+/* Add a gradient to H1 text */
+h1 {
+    font-size: 4rem;
+    /* Makes all letters uppercase */
+    text-transform: uppercase;
+    background: linear-gradient(to right, maroon, grey, lightgrey);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    text-emphasis-color: black;
+}
+
+a, :link, :visited {
+    color: blue;
+    text-decoration: none;
+}
+
+p.normal::first-letter {
+    font-size: initial;
+}
+
+#top {
+    /* margin-bottom: 1rem; */
+}
+
+#bottom {
+    height: 100vh;
+    width: inherit;
+}
+
+.spacer {
+    height: 100vh;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        pointer-events: all;
+    }
+    to {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+
