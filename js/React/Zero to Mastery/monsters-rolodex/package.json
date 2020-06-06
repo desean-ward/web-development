@@ -10,7 +10,7 @@
     "add-dependencies": "^1.0.0",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
-    "react-scripts": "^3.4.0",
+    "react-scripts": "3.3.0",
     "yarn": "^1.22.0",
     "yarn-install": "^1.0.0"
   },
