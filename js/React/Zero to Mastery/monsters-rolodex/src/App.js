@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import { CardList } from './components/card-list/card-list.component.jsx';
-import {SearchBox } from './components/search-box/search-box.component.jsx';
+import { SearchBox } from './components/search-box/search-box.component.jsx';
 import './App.css';
 
 class App extends Component {
@@ -16,11 +16,11 @@ class App extends Component {
     };
   }
 
-  /* Lifecyle Method. Gets called each time the component is rendered */
+/* Lifecyle Method. Gets called each time the component is rendered */
 componentDidMount() {
   fetch('https://jsonplaceholder.typicode.com/users')
   .then(response => response.json())
-  .then(users => this.setState({ monsters: users }));
+  .then(users => this.setState({ monssters: users }));
 }
 
 /* Function to handle Search Box change */
@@ -32,7 +32,7 @@ handleChange = (e) => {
   render() {
     /* Destructure the array */
     const { monsters, searchField } = this.state;
- /* Create a new array (monster) and filter out the monsters (card-list) */
+ /* Create a new array (monster) and filters out the monsters to display (passed to CardList) */
     const filteredMonsters = monsters.filter(monster => monster.name.toLowerCase().includes(searchField.toLowerCase()))
 
     return (
