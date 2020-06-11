@@ -8,19 +8,20 @@ class App extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      meaningOfLife: 47 + this.props.increment
+      meaningOfLife: 47
     };
-
-    this.props = props;
+    
   }
 
-  /* Asynchronous Call back create a second parameter, in this case, console.log */
+/* To use or manipulate the state after making an update, */
+/* Create a synchronous function (such as console.log) as a second parameter, */
+/* where you can use that updated state */
 handleClick = () => {
-  this.setState((prevState, prevProps) => {
-    return { meaningOfLife: prevState.meaningOfLife + prevProps.increment}
+  this.setState(( prevState, prevProps ) => {
+    return {meaningOfLife: prevState.meaningOfLife + prevProps.increment}
   },
-  () => console.log(this.state.meaningOfLife)
-  )
+  () => console.log (this.state.meaningOfLife)
+ )
 }
 
 

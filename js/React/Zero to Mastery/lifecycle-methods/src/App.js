@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { Lifecycles } from './components/lifecycles.component.jsx';
+import Lifecycles from './components/lifecycles.component';
 
 class App extends Component {
-  constructor (props) {
-    super (props);
+  constructor () {
+    super ();
 
     this.state = {
       showChild: true,
-      text: ''
-    }
+      text: 'ggg'
+    };
   }
 
   render() {
@@ -35,7 +35,7 @@ class App extends Component {
             Update Text
           </button>
           <p>
-            <LifeCycles />
+            <Lifecycles />
           </p>
 
         {this.state.showChid ? <Lifecycles text={this.state.text} /> : null }

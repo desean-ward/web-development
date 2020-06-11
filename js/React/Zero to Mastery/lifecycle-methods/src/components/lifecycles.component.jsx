@@ -1,12 +1,12 @@
 
 import React from 'react';
 
-export const Lifecycles extends React.Component {
-  constructor() {
-    super();
-    console.log('constructor!');
+class Lifecycles extends React.Component { 
+  constructor(props) {
+    super(props);
+    console.log('constructor');
   }
-
+ 
   componentDidMount() {
     console.log('componentDidMount!');
   }
@@ -21,7 +21,7 @@ export const Lifecycles extends React.Component {
 
   shouldComponentUpdate(nextProps, nextState) {
     console.log('shouldComponentUpdate!', nextProps);
-    return nextProps.text !== this.props.text;
+    return true;
   }
 
   render() {
@@ -29,9 +29,11 @@ export const Lifecycles extends React.Component {
     return (
       <div className='lifecycles'>
         <h3>LIFECYCLES COMPONENT</h3>
-        {this.props.text}
+        <p>{this.props.text}</p>
       </div>
     );
   }
 }
+
+export default Lifecycles;
 
