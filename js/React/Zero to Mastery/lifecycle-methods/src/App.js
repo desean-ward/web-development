@@ -34,11 +34,9 @@ class App extends Component {
           }>
             Update Text
           </button>
-          <p>
-            <Lifecycles />
-          </p>
-
+        <p>
         {this.state.showChid ? <Lifecycles text={this.state.text} /> : null }
+        </p>
         </header>
       </div>
     );
