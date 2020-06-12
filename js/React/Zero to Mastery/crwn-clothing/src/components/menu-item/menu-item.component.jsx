@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 
 import './menu-item.styles.scss';
 
-/* Functional Component */
+/* Functional Component and destructure the props using {} */
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
     <div 
         className = { ` ${size} menu-item` }
