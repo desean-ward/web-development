@@ -6,9 +6,13 @@ import './menu-item.styles.scss';
 /* Functional Component and destructure the props using {} */
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
     <div 
+    /* Interpolate 'size' of specific menu-items containing the 'size' property */
         className = { ` ${size} menu-item` }
         onClick={() => history.push(`${match.url}${linkUrl}`)}>
-    <div className='background-image'  style={{
+        
+        <div 
+            /* Interpolate the imageUrl */
+            className='background-image'  style={{
             backgroundImage: `url(${imageUrl})`
         }}></div>
     <div className = 'content'>
