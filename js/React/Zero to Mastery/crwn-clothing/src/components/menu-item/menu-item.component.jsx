@@ -6,7 +6,7 @@ import './menu-item.styles.scss';
 /* Functional Component and destructure the props using {} */
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
     <div 
-    /* Interpolate 'size' of specific menu-items containing the 'size' property */
+    /* Interpolate 'size' of any menu-items containing the 'size' property */
         className = { ` ${size} menu-item` }
         onClick={() => history.push(`${match.url}${linkUrl}`)}>
         
@@ -23,4 +23,5 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
 
 )
 
+/* Export modified MenuItem */
 export default withRouter(MenuItem);
